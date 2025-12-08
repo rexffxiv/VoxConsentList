@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Kinklist</title>
+
+        <title>Consent List</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-        <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMTAvMjEvMTV5ehY1AAAAxklEQVQ4jbWTwQ2EIBBFn7KVaAlOGV6twnqsguuWMZagnbDsiYkiGuNmf0LIJMObzw9UMUbmeY48UNd1VaWqEUBEAFBVALz31jgMw6FOeqXDn/ENQC1ikG1jCQRQX1nMm/PaAKpKPfXUU2/TzxzkMMvgqewKImJBntlP6wAQEdrQ0IZmBynZz691GeIdWYiLW1ncugtxa/ls/1+I2ymlyTuAiBDCSAijQbz3xZd36uCOEvQAUFWcm3Bu2v2D/MDWkYX463f+AkocftHk4fEUAAAAAElFTkSuQmCC">
+        <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMTAvMjEvMTV5ehY1AAAAZElEQVQ4jaWTwQ3AIAwDbcT+I9f9hjYQA/mAkO7igKAACWdFAF0A2gb0hP0uCyTATyAJSoaK5xGyEmTC9lktmORUdAQvBQ5cJshktoDk0HkmKRNUEmuE6ztYVXe7bT+jW7z9zi8qYiodCjCHKgAAAABJRU5ErkJggg==">
         <style>
             body {
-                font-family: 'Verdana', 'Arial';
-                font-size: 12px;
+                font-family: 'Nunito', sans-serif;
+                font-size: 13px;
             }
             h2 {
                 padding: 0;
@@ -86,28 +87,10 @@
                 opacity: 1;
                 border-width: 2px;
             }
-            .choice.Not Entered {
-                background-color: #FFFFFF;
-            }
-            .choice.Hell Yeah, Let's Do It {
-                background-color: #00FF11;
-            }
-            .choice.I'm Okay With It {
-                background-color: #00FFF7;
-            }
-            .choice.Let's Be Careful {
-                background-color: #FFFB00;
-            }
-            .choice.Fade To Black {
-                background-color: #FF3B00;
-            }
-            .choice.Hard No {
-                background-color: #FF0000;
-            }
             
             .legend {
-                vertical-align: right;
-                font-size: 10px;
+                vertical-align: middle;
+                font-size: 11px;
             }
             .legend div {
                 display: inline-block;
@@ -189,7 +172,9 @@
                     left: 160px;
                 }
                 .legend div {
-                    width: 130px;
+                      width: max-content;
+                    padding-left: 10px!important; 
+                    padding-right: 10px!important;
                 }
                 #ExportWrapper {
                     position: absolute;
@@ -202,8 +187,10 @@
             }
             @media (max-width: 1700px) and (min-width: 800px) {
                 .legend div {
-                    width: 130px;
+                      width: max-content;
                     padding-bottom: 10px;
+                    padding-left: 10px!important; 
+                    padding-right: 10px!important;
                 }
                 #ExportWrapper {
                     position: absolute;
@@ -213,9 +200,11 @@
             }
             @media (max-width: 800px) and (min-width: 598px) {
                 .legend div {
-                    width: 180px;
+                      width: max-content;
+                    <!--width: 200px;-->
                     padding-bottom: 10px;
-                    padding-left: 10px;
+                      padding-left: 10px!important; 
+                    padding-right: 10px!important;
                 }
                 #ExportWrapper {
                     position: relative;
@@ -242,9 +231,10 @@
                     min-width: 345px;
                 }
                 .legend div {
-                    width: 150px;
+                      width: max-content;
                     padding-bottom: 10px;
-                    padding-left: 10px;
+                     padding-left: 10px; 
+                    padding-right: 10px;
                 }
                 #ExportWrapper {
                     position: relative;
@@ -526,6 +516,13 @@
                 }
             }
         </style>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+        
+        
     </head>
     <body>
         <div class="widthWrapper">
@@ -533,11 +530,11 @@
             <h1>Consent List</h1>
             <div class="legend">
                 <div><span data-color="#FFFFFF" class="choice notEntered"></span> <span class="legend-text">Not Entered</span></div>
-                <div><span data-color="#00FF11" class="choice hellYeah,Let'sDoIt"></span> <span class="legend-text">Hell Yeah, Let's Do It</span></div>
-                <div><span data-color="#00FFF7" class="choice i'mOkayWithIt"></span> <span class="legend-text">I'm Okay With It</span></div>
-                <div><span data-color="#FFFB00" class="choice let'sBeCareful"></span> <span class="legend-text">Let's Be Careful</span></div>
-                <div><span data-color="#FF3B00" class="choice fadeToBlack"></span> <span class="legend-text">Fade to Black</span></div>
-                <div><span data-color="#FF0000" class="choice hardNo"></span> <span class="legend-text">Hard No</span></div>
+                <div><span data-color="#6DB5FE" class="choice favorite"></span> <span class="legend-text">Hell Yes</span></div>
+                <div><span data-color="#23FD22" class="choice like"></span> <span class="legend-text">Like</span></div>
+                <div><span data-color="#FDFD6B" class="choice okay"></span> <span class="legend-text">Okay</span></div>
+                <div><span data-color="#DB6C00" class="choice maybe"></span> <span class="legend-text">Maybe</span></div>
+                <div><span data-color="#920000" class="choice no"></span> <span class="legend-text">No</span></div>
             </div>
             <div id="ExportWrapper">
                 <input type="text" id="URL">
@@ -556,8 +553,8 @@
 * Death of your character
 * Killing another character
 
-#Mental
-(General)
+#Mental 
+(Offering, Receiving)
 * Amnesia/Memory Loss
 * Animalistic Behavior/Going "Feral"
 * Anxiety/Panic Attacks
@@ -571,7 +568,7 @@
 * Hypnotism
 * Memory Modification
 * Mental Abuse
-* Mind Control
+* Mind control
 * Possession/Voidsent
 * Psychosis or Psychotic Breakdowns
 * Stalking
@@ -580,7 +577,7 @@
 * Torture (Psychological)
 
 #Physical
-(General)
+(Offering, Receiving)
 * Acid
 * Being Eaten Alive (Vore)
 * Blood
@@ -596,7 +593,7 @@
 * Doppelgangers/Being replaced with a copy
 * Electrocution
 * Eyeballs/Eye Trauma
-* Freezing to Death
+* Freezing to death
 * Gore/Guts
 * Hand/Fingernail Trauma
 * Human/Ritual Sacrifice
@@ -618,7 +615,7 @@
 * Waterboarding
 
 #Phobias & External Factors
-(General)
+(Offering, Receiving)
 * Bugs and Insects (General)
 * Dolls/Puppets
 * Ghosts/Spirits
@@ -626,7 +623,7 @@
 * Magic (General)
 * Magic (Curses)
 * Necromancy/The Undead/Zombies
-* Needles/Pointed Objects
+* Needles / Pointed Objects
 * Poison/Venom (Short Term)
 * Poison/Venom (Long Term)
 * Rats
@@ -635,11 +632,11 @@
 * Small/Enclosed Spaces
 * Voidsent
 
-#Diseases & Health
-(General)
-* Alcohol Abuse/Addiction Issues
-* Autoimmune Diseases (General)/Chronic Disease
-* Cancer of Similar Diseases
+#Disease & Health
+(Offering, Receiving)
+* Alcohol Abuse/Addiction Issues                
+* Autoimmune diseases (General)/Chronic Disease
+* Cancer or similar diseases
 * Necrosis/Rotting Flesh
 * Parasites
 * Pregnancy
@@ -649,7 +646,7 @@
 (General)
 * Genocide
 * Human Trafficking
-* Plague/Pandemic/Global Disease
+* Plague/Pandemic/Global disease epidemic
 * Prostitution
 * Public Execution
 * Racism (Fantasy)
@@ -658,8 +655,7 @@
 * Religious Extremism
 * Sexism
 * Terrorism
-* Xenophobia
-
+* Xenophobia            
             </textarea>
             <button id="KinksOK">Accept</button>
         </div>
@@ -697,6 +693,15 @@
                     }
                 }
                 return className;
+            };
+            var addCssRule = function(selector, rules){
+                var sheet = document.styleSheets[0];
+                if("insertRule" in sheet) {
+                    sheet.insertRule(selector + "{" + rules + "}", 0);
+                }
+                else if("addRule" in sheet) {
+                    sheet.addRule(selector, rules, 0);
+                }
             };
             
             var kinks = {};
@@ -863,7 +868,7 @@
                         return input;
                     },
                     drawLegend: function(context){
-                        context.font = "bold 13px Arial";
+                        context.font = "bold 11px Arial";
                         context.fillStyle = '#000000';
                         
                         var levels = Object.keys(colors);
@@ -898,9 +903,9 @@
                         context.fillStyle = '#FFFFFF';
                         context.fillRect(0, 0, canvas.width, canvas.height);
                         
-                        context.font = "bold 24px Arial";
+                        context.font = "bold 24px Nunito";
                         context.fillStyle = '#000000';
-                        context.fillText('Kinklist ' + username, 5, 25);
+                        context.fillText('Consent List ' + username, 5, 25);
                         
                         inputKinks.drawLegend(context);
                         return { context: context, canvas: canvas };
@@ -908,21 +913,21 @@
                     drawCallHandlers: {
                         simpleTitle: function(context, drawCall){
                             context.fillStyle = '#000000';
-                            context.font = "bold 18px Arial";
+                            context.font = "bold 18px Nunito";
                             context.fillText(drawCall.data, drawCall.x, drawCall.y + 5);
                         },
                         titleSubtitle: function(context, drawCall){
                             context.fillStyle = '#000000';
-                            context.font = "bold 18px Arial";
+                            context.font = "bold 18px Nunito";
                             context.fillText(drawCall.data.category, drawCall.x, drawCall.y + 5);
                             
                             var fieldsStr = drawCall.data.fields.join(', ');
-                            context.font = "italic 12px Arial";
+                            context.font = "italic 12px Nunito";
                             context.fillText(fieldsStr, drawCall.x, drawCall.y + 20);
                         },
                         kinkRow: function(context, drawCall){
                             context.fillStyle = '#000000';
-                            context.font = "12px Arial";
+                            context.font = "12px Nunito";
                             
                             var x = drawCall.x + 5 + (drawCall.data.choices.length * 20);
                             var y = drawCall.y - 6;
@@ -1313,12 +1318,15 @@
                     e.stopPropagation();
                 });
         
+                var stylesheet = document.styleSheets[0];
                 $('.legend .choice').each(function(){
                     var $choice = $(this);
                     var $parent = $choice.parent();
                     var text = $parent.text().trim();
                     var color = $choice.data('color');
                     var cssClass = this.className.replace('choice ', '').trim();
+                    
+                    addCssRule('.choice.' + cssClass, 'background-color: ' + color + ';');
                     colors[text] = color;
                     level[text] = cssClass;
                 });
@@ -1521,3 +1529,7 @@
         </script>
     </body>
 </html>
+
+
+
+
